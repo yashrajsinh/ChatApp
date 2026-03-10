@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Alert } from 'react-native';
 import React from 'react';
 
 const Header = () => {
@@ -9,20 +9,37 @@ const Header = () => {
         <Text style={styles.icon}> ❮ </Text>
 
         <Image
-          source={{ uri: 'https://i.pravatar.cc/150?img=8' }}
+          source={{
+            uri: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202509/sydney-sweeney-174500291-16x9_0.jpg?VersionId=fPUhudzaN_O4UY.rYriVPcCeMrSi.5Uf&size=690:388',
+          }}
           style={styles.avatar}
         />
 
         <View>
-          <Text style={styles.name}>John Doe</Text>
+          <Text style={styles.name}>Sydney Sweeney </Text>
           <Text style={styles.status}>🟢 Online</Text>
         </View>
       </View>
 
       {/* Right Side */}
       <View style={styles.rightSection}>
-        <Text style={styles.icon}> 📞 </Text>
-        <Text style={styles.icon}> 🎦 </Text>
+        <Text
+          style={styles.icon}
+          onPress={() => Alert.alert('Better Luck next time!')}
+        >
+          📞
+        </Text>
+        <Text
+          style={styles.icon}
+          onPress={() =>
+            Alert.alert(
+              'Are you sure ?',
+              'Video call is also showing your face....',
+            )
+          }
+        >
+          🎦
+        </Text>
       </View>
     </View>
   );
@@ -57,7 +74,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 10,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: '#41431B',
   },
 

@@ -1,4 +1,4 @@
-const CHAT_DATA = [
+export const CHAT_DATA = [
   {
     title: 'March 10',
     data: ['Hey', 'How are you?', 'Did you finish the work?'],
@@ -29,6 +29,6 @@ const CHAT_DATA = [
   },
   {
     title: 'March 3',
-    data: ['Did you finish the assignment?', 'No, I was gooning'],
+    data: ['Did you finish the assignment?', 'No, I was going to do it.'],
   },
 ];
