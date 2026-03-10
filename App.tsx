@@ -5,10 +5,10 @@
  * @format
  */
 
-import { View, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Header from './src/components/Header/Header';
 import ChatView from './src/components/ChatView/ChatView';
+import InputMessage from './src/components/InputMessage/InputMessage';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <SafeAreaView style={{ flex: 1 }}>
         <Header />
         <ChatView />
+        <InputMessage />
       </SafeAreaView>
     </SafeAreaProvider>
   );
