@@ -3,9 +3,7 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  KeyboardAvoidingView,
   TouchableOpacity,
-  Platform,
 } from 'react-native';
 import React from 'react';
 
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: 5,
     borderTopWidth: 1,
     borderColor: '#ddd',
     backgroundColor: '#fff',
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 8,
-    marginRight: 10,
+    marginRight: 15,
     fontSize: 16,
   },
 

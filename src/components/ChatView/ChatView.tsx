@@ -6,6 +6,7 @@ export default function ChatView() {
   return (
     <View style={styles.container}>
       <SectionList
+        style={{ flex: 1 }}
         renderSectionHeader={({ section }) => (
           <View style={styles.headerBox}>
             <Text style={styles.headerText}>{section.title}</Text>
