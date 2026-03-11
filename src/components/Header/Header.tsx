@@ -16,14 +16,14 @@ const Header = () => {
 
         <Image
           source={{
-            uri: 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202509/sydney-sweeney-174500291-16x9_0.jpg?VersionId=fPUhudzaN_O4UY.rYriVPcCeMrSi.5Uf&size=690:388',
+            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_h6DezRwB9Y9r2F-JrQeldKWJa81zZdMog&s',
           }}
           style={styles.avatar}
         />
         {/* user name and status */}
         <View>
-          <Text style={styles.name}>Sydney Sweeney </Text>
-          <Text style={styles.status}>🟢 Online</Text>
+          <Text style={styles.name}>Prison Mike </Text>
+          <Text style={styles.status}>🟢 Online • Gruel enthusiast</Text>
         </View>
       </View>
 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 10,
-    borderWidth: 3,
+    borderWidth: 1,
     borderColor: '#41431B',
   },
 
