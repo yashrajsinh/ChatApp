@@ -2,6 +2,9 @@ import { View, Text, SectionList, StyleSheet } from 'react-native';
 import React from 'react';
 import { CHAT_DATA } from '../../data/ChatData';
 
+{
+  /* This compoent is responsible for rendering enitre array chat data using Seciton header  */
+}
 export default function ChatView() {
   return (
     <View style={styles.container}>

@@ -1,3 +1,5 @@
+/* It's just simple static data to show the chat */
+
 export const CHAT_DATA = [
   {
     title: 'March 10',

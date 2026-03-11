@@ -8,7 +8,11 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 
+{
+  /* This compoent will let user input the message and add that value to array  */
+}
 export default function InputMessage() {
+  //useState to store message value
   const [inputValue, setInputValue] = useState('');
   function handlePress() {
     Alert.alert(inputValue);

@@ -11,21 +11,24 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Header from './src/components/Header/Header';
 import ChatView from './src/components/ChatView/ChatView';
 import InputMessage from './src/components/InputMessage/InputMessage';
+{
+  /*  Entry point for an App (renders diffrent components ) */
+}
 
 function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        {/* Header Component */}
+        {/* ==== Header Component ==== */}
         <Header />
-        {/* Keep Keyboard above intput */}
+        {/* ==== Keep Keyboard above intput ==== */}
         <KeyboardAvoidingView
           style={{ flex: 1 }}
           behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
         >
-          {/* Chat Component */}
+          {/* ==== Chat Component ==== */}
           <ChatView />
-          {/*Send Message Component */}
+          {/* ==== Send Message Component ==== */}
           <InputMessage />
         </KeyboardAvoidingView>
       </SafeAreaView>

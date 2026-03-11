@@ -1,10 +1,16 @@
 import { View, Text, Image, StyleSheet, Alert } from 'react-native';
 import React from 'react';
 
+{
+  /*
+  This component is just the header of chat view where Image, 
+  Username and current status is visible with Video and Audio call option 
+  */
+}
 const Header = () => {
   return (
     <View style={styles.container}>
-      {/* Left Side */}
+      {/* Left Side Bacqk icon*/}
       <View style={styles.leftSection}>
         <Text style={styles.icon}> ❮ </Text>
 
@@ -14,14 +20,14 @@ const Header = () => {
           }}
           style={styles.avatar}
         />
-
+        {/* user name and status */}
         <View>
           <Text style={styles.name}>Sydney Sweeney </Text>
           <Text style={styles.status}>🟢 Online</Text>
         </View>
       </View>
 
-      {/* Right Side */}
+      {/* Right Side Video and audio Call */}
       <View style={styles.rightSection}>
         <Text
           style={styles.icon}
