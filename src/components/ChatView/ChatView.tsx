@@ -11,11 +11,15 @@ export default function ChatView() {
 
   function addMessage(text: string) {
     const newMessage = {
-      title: 'March 12',
-      data: [text],
+      text: text,
+      sender: 'me',
     };
-    //Concate into the array
-    setMessage([...message, newMessage]);
+
+    const updatedSections = [...message];
+
+    updatedSections[0].data = [...updatedSections[0].data, newMessage];
+
+    setMessage(updatedSections);
   }
   return (
     <View style={styles.container}>
@@ -26,11 +30,16 @@ export default function ChatView() {
             <Text style={styles.headerText}>{section.title}</Text>
           </View>
         )}
-        sections={message} //useState here
-        keyExtractor={item => item}
+        sections={[...message].reverse()} //useState here
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.messageBox}>
-            <Text style={styles.messageText}>{item}</Text>
+          <View
+            style={[
+              styles.messageBox,
+              item.sender === 'me' ? styles.myMessage : styles.botMessage,
+            ]}
+          >
+            <Text style={styles.messageText}>{item.text}</Text>
           </View>
         )}
       />
@@ -42,7 +51,7 @@ export default function ChatView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F4F6F8',
+    backgroundColor: '#FFF8F0',
     paddingHorizontal: 10,
   },
 
@@ -73,5 +82,14 @@ const styles = StyleSheet.create({
   messageText: {
     fontSize: 16,
     color: '#333',
+  },
+  myMessage: {
+    alignSelf: 'flex-end',
+    backgroundColor: '#BFC9D1',
+  },
+
+  botMessage: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#FFFFFF',
   },
 });
