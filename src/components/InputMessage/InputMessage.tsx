@@ -11,11 +11,12 @@ import React, { useState } from 'react';
 {
   /* This compoent will let user input the message and add that value to array  */
 }
-export default function InputMessage() {
+export default function InputMessage({ onSend }: any) {
   //useState to store message value
   const [inputValue, setInputValue] = useState('');
+
   function handlePress() {
-    Alert.alert(inputValue);
+    onSend(inputValue); //Sent it to parent
     setInputValue('');
   }
   return (

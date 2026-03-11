@@ -10,7 +10,6 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 //Components
 import Header from './src/components/Header/Header';
 import ChatView from './src/components/ChatView/ChatView';
-import InputMessage from './src/components/InputMessage/InputMessage';
 {
   /*  Entry point for an App (renders diffrent components ) */
 }
@@ -28,8 +27,6 @@ function App() {
         >
           {/* ==== Chat Component ==== */}
           <ChatView />
-          {/* ==== Send Message Component ==== */}
-          <InputMessage />
         </KeyboardAvoidingView>
       </SafeAreaView>
     </SafeAreaProvider>

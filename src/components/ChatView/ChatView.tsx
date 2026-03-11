@@ -1,11 +1,22 @@
 import { View, Text, SectionList, StyleSheet } from 'react-native';
-import React from 'react';
-import { CHAT_DATA } from '../../data/ChatData';
+import React, { useState } from 'react';
+import { CHAT_DATA } from '../../data/ChatData'; //Initial Data
+import InputMessage from '../InputMessage/InputMessage';
 
 {
   /* This compoent is responsible for rendering enitre array chat data using Seciton header  */
 }
 export default function ChatView() {
+  const [message, setMessage] = useState(CHAT_DATA);
+
+  function addMessage(text: string) {
+    const newMessage = {
+      title: 'March 12',
+      data: [text],
+    };
+    //Concate into the array
+    setMessage([...message, newMessage]);
+  }
   return (
     <View style={styles.container}>
       <SectionList
@@ -15,7 +26,7 @@ export default function ChatView() {
             <Text style={styles.headerText}>{section.title}</Text>
           </View>
         )}
-        sections={[...CHAT_DATA].reverse()}
+        sections={message} //useState here
         keyExtractor={item => item}
         renderItem={({ item }) => (
           <View style={styles.messageBox}>
@@ -23,6 +34,8 @@ export default function ChatView() {
           </View>
         )}
       />
+      {/* ==== Send Message Component ==== */}
+      <InputMessage onSend={addMessage} />
     </View>
   );
 }
