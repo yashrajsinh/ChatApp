@@ -4,15 +4,30 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function InputMessage() {
+  const [inputValue, setInputValue] = useState('');
+  function handlePress() {
+    Alert.alert(inputValue);
+    setInputValue('');
+  }
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Type a message..." style={styles.input} />
+      <TextInput
+        placeholder="Type a message..."
+        style={styles.input}
+        value={inputValue}
+        onChangeText={setInputValue}
+      />
 
-      <TouchableOpacity style={styles.sendBtn} activeOpacity={0.5}>
+      <TouchableOpacity
+        style={styles.sendBtn}
+        activeOpacity={0.5}
+        onPress={() => handlePress()}
+      >
         <Text style={styles.sendText}>Send</Text>
       </TouchableOpacity>
     </View>
@@ -22,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 5,
+    padding: 10,
     borderTopWidth: 1,
     borderColor: '#ddd',
     backgroundColor: '#fff',
